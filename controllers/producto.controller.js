@@ -2,8 +2,8 @@ import Producto from '../models/producto'
 
 export async function obtenerProductos(req, res) {
     try {
-        const producto = await Producto.findAll({ order: [['id', 'ASC']] });
-        res.status(200).json(producto);
+        const productos = await Producto.findAll();
+        res.status(200).json(productos);
     } catch (e) {
         res.status(500).json(
             { error: e.message }
@@ -45,7 +45,6 @@ export async function editarProducto(req, res) {
                 error: 'producto no encontrado'
             })
         }
-
     } catch (e) {
         res.status(500).json(
             { error: e.message }
@@ -53,7 +52,7 @@ export async function editarProducto(req, res) {
     }
 }
 
-export async function obtenerProductosPorId(req, res) {
+export async function obtenerProductoPorId(req, res) {
     try {
         const producto = await Producto.findOne({
             where: { id: req.params.id }

@@ -20,7 +20,7 @@ const Factura = database.define("factura",{
     numero: {
         type: Sequelize.INTEGER 
     },
-    clienteid: {
+    clienteId: {
         type: Sequelize.INTEGER 
     },
     total: {

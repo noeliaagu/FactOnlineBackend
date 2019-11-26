@@ -1,12 +1,12 @@
 import { Router} from 'express';
-import { obtenerProductos, grabarProducto, editarProducto, obtenerProductosPorId, eliminarProducto } from '../controllers/producto.controller';
+import { obtenerProductos, grabarProducto, editarProducto, obtenerProductoPorId, eliminarProducto } from '../controllers/producto.controller';
 
 // rutas para productos
 const rutaProductos = Router();
 rutaProductos.get('/', obtenerProductos);
 rutaProductos.post('/', grabarProducto);
 rutaProductos.put('/:id', editarProducto);
-rutaProductos.get('/:id', obtenerProductosPorId);
+rutaProductos.get('/:id', obtenerProductoPorId);
 rutaProductos.delete('/:id', eliminarProducto);
 
 

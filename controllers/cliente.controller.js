@@ -2,8 +2,8 @@ import Cliente from '../models/cliente'
 
 export async function obtenerClientes(req, res) {
     try {
-        const cliente = await Cliente.findAll({ order: [['nombre', 'ASC']] });
-        res.status(200).json(cliente);
+        const clientes = await Cliente.findAll();
+        res.status(200).json(clientes);
     } catch (e) {
         res.status(500).json(
             { error: e.message }
@@ -53,7 +53,7 @@ export async function editarCliente(req, res) {
     }
 }
 
-export async function obtenerClientesPorId(req, res) {
+export async function obtenerClientePorId(req, res) {
     try {
         const cliente = await Cliente.findOne({
             where: { id: req.params.id }

@@ -19,7 +19,7 @@ export async function grabarFactura(req, res){
             fecha: req.body.fecha,  
             pto: req.body.pto,
             numero: req.body.numero,
-            clienteid: req.body.clienteid,
+            clienteId: req.body.clienteId,
             total: req.body.total
         }).then((result) => {
             let items = req.body.items.map( item => {
@@ -41,7 +41,7 @@ export async function grabarFactura(req, res){
             )
         }).catch((err) => {
             console.log(err)
-            res.status(401).json({
+            res.status(400).json({
                 error: err.message
             })
         });
