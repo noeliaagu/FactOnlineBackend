@@ -35,3 +35,12 @@ Creamos punto de inicio de la aplicación `index.js`
 ## Como correr la aplicacion
 
 npm run dev
+
+## Inicializar la Base de Datos
+
+force: true
+
+```
+database.sync({force:true})
+ .then(() => console.log('BASE DE DATOS CONECTADA.'));
+```
